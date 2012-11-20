@@ -487,6 +487,8 @@ int _cdecl wmain(int Argc, wchar_t *Argv[])
 
 	Global->Opt->IsUserAdmin=IsUserAdmin();
 
+	Global->Opt->ReadOnlyConfig = -1; // not initialized
+
 #ifndef NO_WRAPPER
 	// don't inherit from parent process in any case
 	// for OEM plugins only!
@@ -556,8 +558,6 @@ int _cdecl wmain(int Argc, wchar_t *Argv[])
 
 	// макросы не дисаблим
 	Global->Opt->Macro.DisableMacro=0;
-
-	Global->Opt->ReadOnlyConfig = -1; // not initialized
 
 	string strProfilePath, strLocalProfilePath, strTemplatePath;
 
